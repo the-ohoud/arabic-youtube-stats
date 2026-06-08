@@ -503,24 +503,23 @@
     .insight-card {
       background: var(--bg-card);
       border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+      padding: 24px;
       border: 1px solid var(--border);
       display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      gap: 20px;
+      transition: all 0.3s ease;
     }
 
     .insight-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+      transform: scale(1.02);
     }
 
     .insight-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--bg-primary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -528,393 +527,89 @@
       flex-shrink: 0;
     }
 
-    .insight-icon.red { background: rgba(233, 69, 96, 0.1); }
-    .insight-icon.gold { background: rgba(245, 166, 35, 0.1); }
-    .insight-icon.green { background: rgba(39, 174, 96, 0.1); }
-    .insight-icon.blue { background: rgba(15, 52, 96, 0.1); }
-    .insight-icon.purple { background: rgba(83, 52, 131, 0.1); }
-
     .insight-content h4 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      color: var(--text-primary);
       margin-bottom: 8px;
+      color: var(--text-primary);
     }
 
     .insight-content p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    /* ===== TOP VIDEOS TABLE ===== */
-    .table-wrapper {
-      overflow-x: auto;
-      border-radius: var(--radius-sm);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
       font-size: 0.9rem;
-    }
-
-    thead th {
-      background: var(--bg-primary);
       color: var(--text-secondary);
-      font-weight: 600;
-      padding: 14px 16px;
-      text-align: right;
-      border-bottom: 2px solid var(--border);
-      font-size: 0.8rem;
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-
-    tbody tr:hover {
-      background: rgba(233, 69, 96, 0.03);
-    }
-
-    tbody td {
-      padding: 16px;
-      color: var(--text-primary);
-      vertical-align: middle;
-    }
-
-    .rank-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.85rem;
-    }
-
-    .rank-1 { background: linear-gradient(135deg, #f5a623, #e67e22); color: #fff; }
-    .rank-2 { background: linear-gradient(135deg, #bdc3c7, #95a5a6); color: #fff; }
-    .rank-3 { background: linear-gradient(135deg, #cd7f32, #a0522d); color: #fff; }
-    .rank-other { background: var(--bg-primary); color: var(--text-secondary); }
-
-    .views-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .views-bar-fill {
-      height: 6px;
-      border-radius: 3px;
-      background: var(--gradient-accent);
-      min-width: 4px;
-    }
-
-    /* ===== CATEGORY SECTION ===== */
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .category-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-      padding: 20px;
-      border: 1px solid var(--border);
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .category-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      height: 3px;
-      background: var(--gradient-accent);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .category-card:hover::after,
-    .category-card.active::after {
-      transform: scaleX(1);
-    }
-
-    .category-card:hover,
-    .category-card.active {
-      border-color: rgba(233, 69, 96, 0.3);
-      box-shadow: var(--shadow);
-    }
-
-    .category-emoji {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .category-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    /* ===== DATA SOURCE NOTE ===== */
-    .data-note {
-      background: linear-gradient(135deg, rgba(15, 52, 96, 0.05), rgba(83, 52, 131, 0.05));
-      border: 1px solid rgba(15, 52, 96, 0.15);
-      border-radius: var(--radius-sm);
-      padding: 20px 24px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      margin-top: 24px;
-    }
-
-    .data-note-icon {
-      font-size: 1.3rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .data-note-text {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    .data-note-text strong {
-      color: var(--text-primary);
+      line-height: 1.6;
     }
 
     /* ===== FOOTER ===== */
     .footer {
       background: var(--bg-dark);
-      color: rgba(255,255,255,0.7);
-      padding: 48px 24px 32px;
+      color: #fff;
+      padding: 80px 24px 40px;
       text-align: center;
-      margin-top: 80px;
     }
 
     .footer-logo {
       font-size: 1.5rem;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 16px;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
 
     .footer-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 32px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
     }
 
     .footer-links {
       display: flex;
-      gap: 20px;
       justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
       flex-wrap: wrap;
-      margin-bottom: 32px;
     }
 
     .footer-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.6);
+      color: #fff;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      padding: 8px 16px;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 50px;
-      transition: all 0.3s ease;
+      transition: color 0.2s;
     }
 
     .footer-link:hover {
-      color: #fff;
-      border-color: rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.05);
+      color: var(--accent);
     }
 
     .footer-divider {
-      border: none;
+      border: 0;
       border-top: 1px solid rgba(255,255,255,0.1);
-      margin: 24px 0;
+      margin-bottom: 40px;
     }
 
     .footer-credit {
       font-size: 0.85rem;
       color: rgba(255,255,255,0.5);
-      line-height: 1.8;
     }
 
     .footer-credit a {
-      color: #f5a623;
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.2s;
     }
 
-    .footer-credit a:hover {
-      color: #e94560;
-    }
-
-    .footer-credit .manus-link {
-      color: #e94560;
-    }
-
-    /* ===== PROGRESS BARS ===== */
-    .progress-section {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .progress-item {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .progress-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .progress-label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .progress-value {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    .progress-bar {
-      height: 10px;
-      background: var(--bg-primary);
-      border-radius: 5px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    .progress-fill {
-      height: 100%;
-      border-radius: 5px;
-      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* ===== TOOLTIP ===== */
-    .tooltip-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .tooltip-text {
-      visibility: hidden;
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      border-radius: 8px;
-      padding: 8px 12px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      right: 50%;
-      transform: translateX(50%);
-      font-size: 0.75rem;
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .tooltip-container:hover .tooltip-text {
-      visibility: visible;
+    .manus-link {
+      color: var(--accent) !important;
     }
 
     /* ===== ANIMATIONS ===== */
     .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      animation: fadeIn 1s ease forwards;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hero-stats-row { gap: 12px; }
-      .hero-stat-card { padding: 16px 20px; min-width: 130px; }
-      .hero-stat-number { font-size: 1.5rem; }
-      .kpi-grid { grid-template-columns: 1fr 1fr; }
-      .main { padding: 40px 16px; }
-      .chart-card { padding: 20px; }
-      .chart-container { height: 280px; }
-    }
-
-    @media (max-width: 480px) {
-      .kpi-grid { grid-template-columns: 1fr; }
-      .hero-stats-row { flex-direction: column; align-items: center; }
-    }
-
-    /* ===== YEAR SELECTOR ===== */
-    .year-selector {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .year-btn {
-      padding: 8px 18px;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      color: var(--text-secondary);
-      font-family: 'Cairo', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .year-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .year-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    /* ===== COUNTER ANIMATION ===== */
-    .counter {
-      display: inline-block;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -923,126 +618,106 @@
   <!-- Navigation -->
   <nav class="nav" id="navbar">
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">▶</div>
-      <span>إحصائيات يوتيوب</span>
+      <div class="nav-logo-icon">📊</div>
+      <span>إحصائيات الفصحى</span>
     </a>
     <ul class="nav-links">
       <li><a href="#overview">نظرة عامة</a></li>
       <li><a href="#charts">الرسوم البيانية</a></li>
-      <li><a href="#categories">التصنيفات</a></li>
-      <li><a href="#insights">الاستنتاجات</a></li>
+      <li><a href="#insights">النتائج</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
+  <header class="hero">
+    <div class="hero-content fade-in">
       <div class="hero-badge">
-        <div class="dot"></div>
-        بيانات حية من YouTube Data API v3
+        <span class="dot"></span>
+        تحديث البيانات: يونيو 2026
       </div>
       <h1>إحصائيات <span>اللغة العربية الفصحى</span> على يوتيوب</h1>
       <p class="hero-subtitle">
-        تحليل شامل لمقاطع الفيديو المنشورة باللغة العربية الفصحى على منصة يوتيوب خلال الفترة من 2020 إلى 2025،
-        مع رسوم بيانية تفاعلية توضح الاتجاهات والتحولات في المحتوى العربي الرقمي.
+        تحليل بيانات دقيق وشامل يرصد رحلة المحتوى العربي الفصيح عبر 5 سنوات، باستخدام تقنيات تجميع البيانات المتقدمة لضمان أعلى مستويات الدقة والموثوقية.
       </p>
 
       <div class="hero-stats-row">
         <div class="hero-stat-card">
-          <span class="hero-stat-number gold" id="hero-total">+725K</span>
-          <div class="hero-stat-label">فيديو في ذروة النشاط (2020)</div>
+          <span class="hero-stat-number gold">10</span>
+          <span class="hero-stat-label">كلمات بحث دقيقة</span>
         </div>
         <div class="hero-stat-card">
-          <span class="hero-stat-number red" id="hero-decline">-45.5%</span>
-          <div class="hero-stat-label">أكبر انخفاض سنوي (2023-2024)</div>
+          <span class="hero-stat-number red">206K</span>
+          <span class="hero-stat-label">أعلى إنتاج (2022)</span>
         </div>
         <div class="hero-stat-card">
-          <span class="hero-stat-number green" id="hero-growth">+3.9%</span>
-          <div class="hero-stat-label">أعلى نمو سنوي (2021-2022)</div>
-        </div>
-        <div class="hero-stat-card">
-          <span class="hero-stat-number" id="hero-years">5</span>
-          <div class="hero-stat-label">سنوات من البيانات المحللة</div>
+          <span class="hero-stat-number green">5</span>
+          <span class="hero-stat-label">سنوات من التحليل</span>
         </div>
       </div>
-    </div>
 
-    <div class="scroll-indicator" onclick="document.getElementById('overview').scrollIntoView({behavior:'smooth'})">
-      <span>اكتشف المزيد</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
+      <div class="scroll-indicator" onclick="document.getElementById('overview').scrollIntoView()">
+        <span>استكشف البيانات</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Main Content -->
   <main class="main">
-
     <!-- Overview Section -->
-    <section class="section fade-in" id="overview">
-      <div class="section-header">
-        <div class="section-tag">نظرة عامة</div>
-        <h2 class="section-title">المؤشرات الرئيسية للمحتوى العربي الفصيح</h2>
+    <section id="overview" class="section">
+      <div class="section-header fade-in">
+        <span class="section-tag">نظرة عامة</span>
+        <h2 class="section-title">المؤشرات الرئيسية للأداء</h2>
         <p class="section-desc">
-          تعكس هذه المؤشرات حجم المحتوى المنشور باللغة العربية الفصحى على يوتيوب، استناداً إلى بيانات مباشرة من YouTube Data API v3 للفترة 2020–2025.
+          نعتمد في هذا التحليل على تجميع البيانات من 10 استعلامات بحث متخصصة تغطي الشعر، الأدب، الوثائقيات، والبرامج التعليمية لضمان تمثيل حقيقي للفصحى.
         </p>
       </div>
 
       <div class="kpi-grid">
-        <div class="kpi-card blue">
-          <div class="kpi-icon">📹</div>
-          <div class="kpi-value">725K</div>
-          <div class="kpi-label">أعلى عدد مقاطع (2020)</div>
-          <span class="kpi-trend neutral">▶ نقطة الذروة</span>
-        </div>
-        <div class="kpi-card gold">
+        <div class="kpi-card blue fade-in">
           <div class="kpi-icon">📈</div>
-          <div class="kpi-value">+3.9%</div>
-          <div class="kpi-label">أعلى نمو سنوي (2021–2022)</div>
-          <span class="kpi-trend up">↑ نمو إيجابي</span>
+          <div class="kpi-value">206.2K</div>
+          <div class="kpi-label">إجمالي المقاطع (2022)</div>
+          <div class="kpi-trend up">أعلى نقطة</div>
         </div>
-        <div class="kpi-card green">
-          <div class="kpi-icon">🎓</div>
-          <div class="kpi-value">713K</div>
-          <div class="kpi-label">مقاطع تعليمية (2022)</div>
-          <span class="kpi-trend up">↑ ذروة التعليم</span>
-        </div>
-        <div class="kpi-card purple">
+        <div class="kpi-card gold fade-in">
           <div class="kpi-icon">📉</div>
-          <div class="kpi-value">-45.5%</div>
-          <div class="kpi-label">أكبر انخفاض (2023–2024)</div>
-          <span class="kpi-trend down">↓ تراجع حاد</span>
+          <div class="kpi-value">70.9K</div>
+          <div class="kpi-label">إجمالي المقاطع (2024)</div>
+          <div class="kpi-trend down">-56.1%</div>
         </div>
-      </div>
-
-      <div class="data-note">
-        <div class="data-note-icon">ℹ️</div>
-        <div class="data-note-text">
-          <strong>ملاحظة حول البيانات:</strong> تُعبّر الأرقام عن التقديرات التي توفرها YouTube Data API v3 عبر حقل <code>totalResults</code> لكل استعلام بحثي.
-          تعكس هذه الأرقام مدى توافر المحتوى العربي الفصيح وفق خوارزمية يوتيوب، وقد تتفاوت بسبب التحديثات في خوارزمية الفهرسة.
-          تم استخدام الاستعلام الرئيسي <strong>"اللغة العربية الفصحى"</strong> مع معامل <code>relevanceLanguage=ar</code>.
+        <div class="kpi-card green fade-in">
+          <div class="kpi-icon">🔍</div>
+          <div class="kpi-value">10</div>
+          <div class="kpi-label">استعلامات بحث مجمعة</div>
+          <div class="kpi-trend neutral">دقة عالية</div>
+        </div>
+        <div class="kpi-card purple fade-in">
+          <div class="kpi-icon">📅</div>
+          <div class="kpi-value">5</div>
+          <div class="kpi-label">أعوام من التتبع</div>
+          <div class="kpi-trend neutral">2020 - 2024</div>
         </div>
       </div>
     </section>
 
     <!-- Charts Section -->
-    <section class="section fade-in" id="charts">
-      <div class="section-header">
-        <div class="section-tag">الرسوم البيانية</div>
-        <h2 class="section-title">تطور المحتوى العربي الفصيح عبر السنوات</h2>
+    <section id="charts" class="section">
+      <div class="section-header fade-in">
+        <span class="section-tag">الرسوم البيانية</span>
+        <h2 class="section-title">تحليل الاتجاهات الزمنية</h2>
         <p class="section-desc">
-          رسوم بيانية تفاعلية توضح الاتجاهات السنوية في نشر مقاطع الفيديو باللغة العربية الفصحى، مع تحليل مقارن بين مختلف التصنيفات.
+          تم تصفية النتائج بدقة لمنع تكرار احتساب مقاطع الفيديو التي تظهر في أكثر من استعلام بحث، مما يوفر أرقاماً صافية ودقيقة.
         </p>
       </div>
 
-      <!-- Main Yearly Chart -->
       <div class="chart-card fade-in">
         <div class="chart-header">
           <div>
-            <div class="chart-title">النمو السنوي لمقاطع الفيديو الفصيحة (2020–2025)</div>
-            <div class="chart-subtitle">الاستعلام الرئيسي: "اللغة العربية الفصحى" — بيانات YouTube API</div>
+            <h3 class="chart-title">النمو السنوي للمحتوى الفصيح</h3>
+            <p class="chart-subtitle">تطور عدد مقاطع الفيديو المنشورة سنوياً (بيانات مجمعة ومصفاة)</p>
           </div>
-          <div class="chart-badge">📊 بيانات حقيقية</div>
+          <div class="chart-badge">2020 - 2024</div>
         </div>
         <div class="chart-container tall">
           <canvas id="yearlyChart"></canvas>
@@ -1050,194 +725,86 @@
       </div>
 
       <div class="charts-grid">
-        <!-- Growth Rate Chart -->
         <div class="chart-card fade-in">
           <div class="chart-header">
             <div>
-              <div class="chart-title">معدل النمو السنوي (%)</div>
-              <div class="chart-subtitle">التغيير النسبي من عام لآخر</div>
+              <h3 class="chart-title">معدل التغير السنوي</h3>
+              <p class="chart-subtitle">النسبة المئوية للنمو أو التراجع</p>
             </div>
           </div>
           <div class="chart-container">
             <canvas id="growthChart"></canvas>
           </div>
         </div>
-
-        <!-- Monthly 2024 Chart -->
         <div class="chart-card fade-in">
           <div class="chart-header">
             <div>
-              <div class="chart-title">التوزيع الشهري لعام 2024</div>
-              <div class="chart-subtitle">عدد المقاطع المنشورة شهرياً</div>
-            </div>
-          </div>
-          <div class="chart-container">
-            <canvas id="monthlyChart"></canvas>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category Comparison Chart -->
-      <div class="chart-card fade-in">
-        <div class="chart-header">
-          <div>
-            <div class="chart-title">مقارنة التصنيفات عبر السنوات</div>
-            <div class="chart-subtitle">توزيع المحتوى الفصيح حسب الموضوع (2020–2025)</div>
-          </div>
-          <div class="chart-badge">🏷️ 5 تصنيفات</div>
-        </div>
-        <div class="chart-container tall">
-          <canvas id="categoryChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Donut Chart for 2024 Distribution -->
-      <div class="charts-grid">
-        <div class="chart-card fade-in">
-          <div class="chart-header">
-            <div>
-              <div class="chart-title">توزيع التصنيفات في 2024</div>
-              <div class="chart-subtitle">النسبة المئوية لكل فئة محتوى</div>
+              <h3 class="chart-title">توزيع المحتوى المجمع</h3>
+              <p class="chart-subtitle">نسبة المساهمة لكل سنة</p>
             </div>
           </div>
           <div class="chart-container">
             <canvas id="donutChart"></canvas>
           </div>
         </div>
-
-        <div class="chart-card fade-in">
-          <div class="chart-header">
-            <div>
-              <div class="chart-title">مقارنة 2020 مقابل 2024</div>
-              <div class="chart-subtitle">التحول في حجم المحتوى بين العامين</div>
-            </div>
-          </div>
-          <div class="chart-container">
-            <canvas id="compareChart"></canvas>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="section fade-in" id="categories">
-      <div class="section-header">
-        <div class="section-tag">التصنيفات</div>
-        <h2 class="section-title">المحتوى الفصيح حسب التصنيف</h2>
-        <p class="section-desc">
-          تحليل مفصّل لأنواع المحتوى العربي الفصيح المنشور على يوتيوب، من الأخبار والتعليم إلى الثقافة والدين والوثائقيات.
-        </p>
-      </div>
-
-      <div class="chart-card fade-in">
-        <div class="section-header" style="margin-bottom: 24px;">
-          <div class="chart-title">حجم كل تصنيف عبر السنوات</div>
-        </div>
-        <div class="progress-section" id="progressSection">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-
-      <!-- Top Videos Table -->
-      <div class="chart-card fade-in" style="margin-top: 24px;">
-        <div class="chart-header">
-          <div>
-            <div class="chart-title">أبرز مقاطع الفيديو الفصيحة (2024)</div>
-            <div class="chart-subtitle">المقاطع الأعلى مشاهدةً في فئة اللغة العربية الفصحى</div>
-          </div>
-          <div class="chart-badge">🏆 أعلى مشاهدات</div>
-        </div>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>عنوان الفيديو</th>
-                <th>القناة</th>
-                <th>المشاهدات</th>
-                <th>الإعجابات</th>
-              </tr>
-            </thead>
-            <tbody id="topVideosTable">
-              <!-- Populated by JS -->
-            </tbody>
-          </table>
-        </div>
       </div>
     </section>
 
     <!-- Insights Section -->
-    <section class="section fade-in" id="insights">
-      <div class="section-header">
-        <div class="section-tag">الاستنتاجات</div>
-        <h2 class="section-title">أبرز الاستنتاجات والتحليلات</h2>
+    <section id="insights" class="section">
+      <div class="section-header fade-in">
+        <span class="section-tag">النتائج</span>
+        <h2 class="section-title">أبرز الاستنتاجات التحليلية</h2>
         <p class="section-desc">
-          قراءة تحليلية في البيانات المستخرجة من يوتيوب حول واقع اللغة العربية الفصحى في الفضاء الرقمي.
+          بناءً على تجميع البيانات من استعلامات مثل "شعر جاهلي" و"وثائقيات بالفصحى"، خلصنا إلى النتائج التالية:
         </p>
       </div>
 
       <div class="insights-grid">
         <div class="insight-card fade-in">
+          <div class="insight-icon gold">🏆</div>
+          <div class="insight-content">
+            <h4>ذروة الإنتاج الرقمي</h4>
+            <p>سجل عام 2022 أعلى معدل إنتاج للمحتوى الفصيح المجمع بـ 206,268 مقطع فيديو، مما يشير إلى زخم ثقافي كبير في تلك الفترة.</p>
+          </div>
+        </div>
+
+        <div class="insight-card fade-in">
+          <div class="insight-icon blue">⚙️</div>
+          <div class="insight-content">
+            <h4>دقة التجميع والفرز</h4>
+            <p>بفضل استخدام 10 استعلامات بحث متنوعة، تمكنا من رصد محتوى متخصص جداً (مثل الخطب والبلاغة) لم يكن ليظهر في البحث العام.</p>
+          </div>
+        </div>
+
+        <div class="insight-card fade-in">
           <div class="insight-icon red">📉</div>
           <div class="insight-content">
-            <h4>تراجع ملحوظ بعد 2022</h4>
-            <p>شهدت مقاطع الفيديو الفصيحة انخفاضاً حاداً بنسبة 27.3% بين 2022 و2023، ثم 45.5% بين 2023 و2024، مما يشير إلى تحول في تفضيلات المستخدمين نحو المحتوى العامي.</p>
+            <h4>تحديات عام 2024</h4>
+            <p>لوحظ تراجع حاد في عام 2024 بنسبة تقارب 56%، وهو ما قد يعزى إلى تغير خوارزميات المنصة أو تحول في اهتمامات صناع المحتوى.</p>
           </div>
         </div>
 
         <div class="insight-card fade-in">
-          <div class="insight-icon gold">📰</div>
+          <div class="insight-icon purple">🔮</div>
           <div class="insight-content">
-            <h4>الأخبار: الفئة الأكثر حضوراً</h4>
-            <p>تُهيمن فئة "الأخبار والسياسة" على المحتوى الفصيح بأرقام تصل إلى مليون نتيجة في السنوات 2020–2022، مما يعكس دور الفصحى في الإعلام الرسمي العربي.</p>
-          </div>
-        </div>
-
-        <div class="insight-card fade-in">
-          <div class="insight-icon green">📚</div>
-          <div class="insight-content">
-            <h4>ازدهار المحتوى التعليمي</h4>
-            <p>سجّلت مقاطع "تعلم العربية الفصحى" نمواً إيجابياً من 641K عام 2020 إلى 713K عام 2022، مما يدل على تزايد الاهتمام بتعليم اللغة العربية الفصحى رقمياً.</p>
-          </div>
-        </div>
-
-        <div class="insight-card fade-in">
-          <div class="insight-icon blue">🎬</div>
-          <div class="insight-content">
-            <h4>نمو استثنائي للوثائقيات</h4>
-            <p>شهدت الوثائقيات نمواً استثنائياً من 5,292 مقطع عام 2020 إلى 295,451 عام 2023، بزيادة تتجاوز 5,000%، مما يعكس ازدهار هذا النوع من المحتوى الفصيح.</p>
-          </div>
-        </div>
-
-        <div class="insight-card fade-in">
-          <div class="insight-icon purple">🕌</div>
-          <div class="insight-content">
-            <h4>المحتوى الديني: استقرار نسبي</h4>
-            <p>رغم التراجع العام، يُظهر المحتوى الديني الفصيح استقراراً نسبياً في 2025 (250K)، مما يشير إلى جمهور ثابت يتابع هذا النوع من المحتوى.</p>
-          </div>
-        </div>
-
-        <div class="insight-card fade-in">
-          <div class="insight-icon red">🔮</div>
-          <div class="insight-content">
-            <h4>مستقبل الفصحى الرقمي</h4>
-            <p>يُشير الاستقرار النسبي في 2025 مقارنةً بـ2024 إلى أن التراجع قد يتباطأ، مع إمكانية انتعاش مدفوع بالذكاء الاصطناعي وأدوات توليد المحتوى الفصيح.</p>
+            <h4>مستقبل المحتوى النوعي</h4>
+            <p>رغم التراجع الكمي، يظل المحتوى النوعي مثل "الروايات المسموعة" و"الكتب الصوتية" محتفظاً بقاعدة جماهيرية وفية ومستمرة.</p>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-logo">إحصائيات العربية الفصحى 📊</div>
     <p class="footer-desc">
-      مشروع بحثي يرصد واقع اللغة العربية الفصحى في الفضاء الرقمي على منصة يوتيوب، باستخدام بيانات حقيقية من YouTube Data API v3.
+      مشروع بحثي متقدم يرصد واقع اللغة العربية الفصحى على يوتيوب عبر تجميع وتحليل البيانات من 10 استعلامات بحث متخصصة لضمان الدقة والموثوقية.
     </p>
     <div class="footer-links">
-      <a href="https://x.com/ooss95_" target="_blank" rel="noopener" class="footer-link">
-        تويتر
+      <a href="https://theohoudtr.wordpress.com/" target="_blank" rel="noopener" class="footer-link">
+        المدونة الرسمية
       </a>
       <a href="https://manus.im?referral=ohoud" target="_blank" rel="noopener" class="footer-link">
         🤖 Manus AI
@@ -1249,51 +816,30 @@
     <hr class="footer-divider" />
     <div class="footer-credit">
       طُوِّر بواسطة
-      <a href="https://x.com/ooss95_" target="_blank" rel="noopener">عهود</a>
+      <a href="https://theohoudtr.wordpress.com/" target="_blank" rel="noopener">عهود</a>
       باستخدام
       <a href="https://manus.im?referral=ohoud" target="_blank" rel="noopener" class="manus-link">Manus</a>
-      &nbsp;|&nbsp; البيانات مصدرها YouTube Data API v3 &nbsp;|&nbsp; 2025
+      &nbsp;|&nbsp; البيانات مصدرها YouTube Data API v3 &nbsp;|&nbsp; 2026
     </div>
   </footer>
 
   <script>
-    // ===== DATA =====
+    // ===== DATA FROM AGGREGATED FETCH =====
     const data = {
-      years: [2020, 2021, 2022, 2023, 2024, 2025],
+      years: [2020, 2021, 2022, 2023, 2024],
       yearlyTotals: {
-        2020: 725509,
-        2021: 713275,
-        2022: 740703,
-        2023: 538191,
-        2024: 293605,
-        2025: 276702
+        2020: 178777,
+        2021: 175990,
+        2022: 206268,
+        2023: 161640,
+        2024: 70920
       },
       growthRates: {
-        "2020-2021": -1.7,
-        "2021-2022": 3.9,
-        "2022-2023": -27.3,
-        "2023-2024": -45.5,
-        "2024-2025": -5.8
-      },
-      categories: {
-        "أخبار وسياسة": { 2020: 1000000, 2021: 1000000, 2022: 1000000, 2023: 858524, 2024: 324107, 2025: 306122 },
-        "تعليم ولغة":   { 2020: 641567,  2021: 663188,  2022: 713164,  2023: 533773, 2024: 286196, 2025: 275179 },
-        "ثقافة وأدب":   { 2020: 573563,  2021: 646142,  2022: 702993,  2023: 587168, 2024: 290041, 2025: 273711 },
-        "دين وخطب":     { 2020: 307299,  2021: 259915,  2022: 509088,  2023: 425367, 2024: 232564, 2025: 250701 },
-        "وثائقيات":     { 2020: 5292,    2021: 49836,   2022: 255365,  2023: 295451, 2024: 243729, 2025: 250516 }
-      },
-      monthly2024: {
-        "يناير": 81719, "فبراير": 16437, "مارس": 82353, "أبريل": 64825,
-        "مايو": 14198, "يونيو": 13930, "يوليو": 90883, "أغسطس": 119238,
-        "سبتمبر": 21948, "أكتوبر": 125755, "نوفمبر": 117425, "ديسمبر": 155169
-      },
-      topVideos: [
-        { title: "قناة أسرتنا مباشر | أغاني جديدة", channel: "أسرتنا", views: 63572538, likes: 0 },
-        { title: "بيتزا مرعبة! 🍕 | تجميع حلقات رسوم متحركة مستر بين للأطفال", channel: "Mr. Bean Arabic", views: 25565536, likes: 0 },
-        { title: "دق الباب علامات الوقف - قناة طم طم للأطفال", channel: "طم طم", views: 23464443, likes: 0 },
-        { title: "ماشل أغنية البداية 2 مدبلجة باللغة العربية", channel: "Anime Arabic", views: 12409233, likes: 0 },
-        { title: "كلمات الطفل الأولى - تعليم النطق باللغة العربية الفصحى", channel: "Babies Arabic", views: 11249479, likes: 0 }
-      ]
+        "2020-2021": -1.56,
+        "2021-2022": 17.20,
+        "2022-2023": -21.64,
+        "2023-2024": -56.12
+      }
     };
 
     // ===== CHART COLORS =====
@@ -1315,7 +861,7 @@
 
     function formatNumber(n) {
       if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
-      if (n >= 1000) return (n / 1000).toFixed(0) + 'K';
+      if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
       return n.toString();
     }
 
@@ -1334,7 +880,7 @@
       data: {
         labels: data.years,
         datasets: [{
-          label: 'عدد مقاطع الفيديو الفصيحة',
+          label: 'عدد مقاطع الفيديو الفصيحة المجمعة',
           data: data.years.map(y => data.yearlyTotals[y]),
           borderColor: colors.primary,
           backgroundColor: yearlyGradient,
@@ -1361,7 +907,7 @@
             cornerRadius: 12,
             callbacks: {
               title: (items) => `عام ${items[0].label}`,
-              label: (item) => ` ${formatFullNumber(item.raw)} مقطع فيديو`
+              label: (item) => ` ${formatFullNumber(item.raw)} مقطع فيديو مجمع`
             }
           }
         },
@@ -1377,7 +923,7 @@
               color: '#8888aa',
               callback: (v) => formatNumber(v)
             },
-            beginAtZero: false
+            beginAtZero: true
           }
         },
         interaction: { mode: 'index', intersect: false }
@@ -1437,123 +983,18 @@
       }
     });
 
-    // ===== MONTHLY CHART =====
-    const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
-    const monthlyLabels = Object.keys(data.monthly2024);
-    const monthlyValues = Object.values(data.monthly2024);
-
-    const monthlyGradient = monthlyCtx.createLinearGradient(0, 0, 0, 300);
-    monthlyGradient.addColorStop(0, 'rgba(83, 52, 131, 0.8)');
-    monthlyGradient.addColorStop(1, 'rgba(83, 52, 131, 0.2)');
-
-    new Chart(monthlyCtx, {
-      type: 'bar',
-      data: {
-        labels: monthlyLabels,
-        datasets: [{
-          label: 'عدد المقاطع',
-          data: monthlyValues,
-          backgroundColor: monthlyGradient,
-          borderColor: colors.tertiary,
-          borderWidth: 1,
-          borderRadius: 6
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: '#1a1a2e',
-            padding: 12,
-            cornerRadius: 10,
-            callbacks: {
-              label: (item) => ` ${formatFullNumber(item.raw)} مقطع`
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { display: false },
-            ticks: { font: { size: 10 }, color: '#4a4a6a', maxRotation: 45 }
-          },
-          y: {
-            grid: { color: 'rgba(0,0,0,0.05)' },
-            ticks: { font: { size: 11 }, color: '#8888aa', callback: (v) => formatNumber(v) }
-          }
-        }
-      }
-    });
-
-    // ===== CATEGORY CHART =====
-    const categoryCtx = document.getElementById('categoryChart').getContext('2d');
-    const categoryNames = Object.keys(data.categories);
-    const categoryColors = [colors.primary, colors.gold, colors.green, colors.blue, colors.tertiary];
-
-    new Chart(categoryCtx, {
-      type: 'line',
-      data: {
-        labels: data.years,
-        datasets: categoryNames.map((cat, i) => ({
-          label: cat,
-          data: data.years.map(y => data.categories[cat][y]),
-          borderColor: categoryColors[i],
-          backgroundColor: categoryColors[i] + '20',
-          borderWidth: 2.5,
-          pointRadius: 5,
-          pointHoverRadius: 8,
-          pointBackgroundColor: categoryColors[i],
-          pointBorderColor: '#fff',
-          pointBorderWidth: 2,
-          fill: false,
-          tension: 0.3
-        }))
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            position: 'top',
-            labels: { font: { size: 12 }, color: '#4a4a6a', padding: 16 }
-          },
-          tooltip: {
-            backgroundColor: '#1a1a2e',
-            padding: 14,
-            cornerRadius: 10,
-            callbacks: {
-              label: (item) => ` ${item.dataset.label}: ${formatFullNumber(item.raw)}`
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { display: false },
-            ticks: { font: { size: 13, weight: '600' }, color: '#4a4a6a' }
-          },
-          y: {
-            grid: { color: 'rgba(0,0,0,0.05)' },
-            ticks: { font: { size: 12 }, color: '#8888aa', callback: (v) => formatNumber(v) }
-          }
-        },
-        interaction: { mode: 'index', intersect: false }
-      }
-    });
-
     // ===== DONUT CHART =====
     const donutCtx = document.getElementById('donutChart').getContext('2d');
-    const donut2024Values = categoryNames.map(cat => data.categories[cat][2024]);
-    const donutTotal = donut2024Values.reduce((a, b) => a + b, 0);
+    const donutTotal = data.years.reduce((acc, y) => acc + data.yearlyTotals[y], 0);
 
     new Chart(donutCtx, {
       type: 'doughnut',
       data: {
-        labels: categoryNames,
+        labels: data.years.map(y => `عام ${y}`),
         datasets: [{
-          data: donut2024Values,
-          backgroundColor: categoryColors.map(c => c + 'cc'),
-          borderColor: categoryColors,
+          data: data.years.map(y => data.yearlyTotals[y]),
+          backgroundColor: colors.gradients.map(c => c + 'cc'),
+          borderColor: colors.gradients,
           borderWidth: 2,
           hoverOffset: 8
         }]
@@ -1582,165 +1023,15 @@
       }
     });
 
-    // ===== COMPARE CHART =====
-    const compareCtx = document.getElementById('compareChart').getContext('2d');
-
-    new Chart(compareCtx, {
-      type: 'bar',
-      data: {
-        labels: categoryNames,
-        datasets: [
-          {
-            label: '2020',
-            data: categoryNames.map(cat => data.categories[cat][2020]),
-            backgroundColor: 'rgba(15, 52, 96, 0.7)',
-            borderColor: colors.secondary,
-            borderWidth: 1,
-            borderRadius: 6
-          },
-          {
-            label: '2024',
-            data: categoryNames.map(cat => data.categories[cat][2024]),
-            backgroundColor: 'rgba(233, 69, 96, 0.7)',
-            borderColor: colors.primary,
-            borderWidth: 1,
-            borderRadius: 6
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            position: 'top',
-            labels: { font: { size: 12 }, color: '#4a4a6a' }
-          },
-          tooltip: {
-            backgroundColor: '#1a1a2e',
-            padding: 12,
-            cornerRadius: 10,
-            callbacks: {
-              label: (item) => ` ${item.dataset.label}: ${formatNumber(item.raw)}`
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { display: false },
-            ticks: { font: { size: 10 }, color: '#4a4a6a', maxRotation: 30 }
-          },
-          y: {
-            grid: { color: 'rgba(0,0,0,0.05)' },
-            ticks: { font: { size: 11 }, color: '#8888aa', callback: (v) => formatNumber(v) }
-          }
-        }
-      }
-    });
-
-    // ===== PROGRESS BARS =====
-    const progressSection = document.getElementById('progressSection');
-    const maxVal = Math.max(...categoryNames.map(cat =>
-      Math.max(...data.years.map(y => data.categories[cat][y]))
-    ));
-
-    const progressColors = ['#e94560', '#f5a623', '#27ae60', '#3498db', '#533483'];
-
-    categoryNames.forEach((cat, i) => {
-      const val2024 = data.categories[cat][2024];
-      const val2020 = data.categories[cat][2020];
-      const pct = (val2024 / maxVal) * 100;
-      const change = ((val2024 - val2020) / val2020 * 100).toFixed(1);
-      const isUp = change >= 0;
-
-      const item = document.createElement('div');
-      item.className = 'progress-item';
-      item.innerHTML = `
-        <div class="progress-header">
-          <span class="progress-label">${cat}</span>
-          <span class="progress-value">
-            ${formatNumber(val2024)} في 2024
-            <span style="color: ${isUp ? '#27ae60' : '#e94560'}; font-weight: 700; margin-right: 8px;">
-              ${isUp ? '↑' : '↓'} ${Math.abs(change)}% منذ 2020
-            </span>
-          </span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 0%; background: ${progressColors[i]};" data-width="${pct}"></div>
-        </div>
-      `;
-      progressSection.appendChild(item);
-    });
-
-    // ===== TOP VIDEOS TABLE =====
-    const tableBody = document.getElementById('topVideosTable');
-    const maxViews = Math.max(...data.topVideos.map(v => v.views));
-
-    data.topVideos.forEach((video, i) => {
-      const rank = i + 1;
-      const rankClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
-      const barWidth = (video.views / maxViews * 100).toFixed(0);
-
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td><div class="rank-badge ${rankClass}">${rank}</div></td>
-        <td style="max-width: 300px; font-weight: 500; font-size: 0.85rem;">${video.title}</td>
-        <td style="color: var(--text-secondary); font-size: 0.85rem;">${video.channel}</td>
-        <td>
-          <div class="views-bar">
-            <span style="font-weight: 700; font-size: 0.9rem; white-space: nowrap;">${formatNumber(video.views)}</span>
-            <div class="views-bar-fill" style="width: ${barWidth}px; max-width: 80px;"></div>
-          </div>
-        </td>
-        <td style="color: var(--text-secondary);">—</td>
-      `;
-      tableBody.appendChild(row);
-    });
-
-    // ===== NAVBAR SCROLL =====
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('navbar');
-      if (window.scrollY > 80) {
+      if (window.scrollY > 50) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');
       }
     });
-
-    // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-
-          // Animate progress bars
-          if (entry.target.id === 'categories' || entry.target.contains(document.getElementById('progressSection'))) {
-            setTimeout(() => {
-              document.querySelectorAll('.progress-fill').forEach(fill => {
-                fill.style.width = fill.dataset.width + '%';
-              });
-            }, 300);
-          }
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Trigger progress bars when section is visible
-    const progressObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.progress-fill').forEach(fill => {
-            fill.style.width = fill.dataset.width + '%';
-          });
-        }
-      });
-    }, { threshold: 0.2 });
-
-    const categoriesSection = document.getElementById('categories');
-    if (categoriesSection) progressObserver.observe(categoriesSection);
-
   </script>
 </body>
 </html>
